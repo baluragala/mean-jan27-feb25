@@ -1,0 +1,22 @@
+{
+  "name": "my-awesome-module",
+  "version": "1.0.0",
+  "description": "an amazing utillty",
+  "main": "1-using-modules.js",
+  "dependencies": {
+    "chalk": "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "echo": "echo \"I am good",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "awesome",
+    "node",
+    "npm"
+  ],
+  "author": "zeolearn",
+  "license": "ISC"
+}
