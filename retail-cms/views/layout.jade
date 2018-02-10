@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+  body
+    h1#master.heading.main(style="color:green")= title
+    #main
+    .section
+    h3= subTitle
+    nav 
+      ul
+        li
+          a(href="/products") List All Products
+        li
+          a(href="/products/add") Add Product
+    block main

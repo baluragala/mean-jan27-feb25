@@ -1,0 +1,21 @@
+extends layout
+
+block main
+    - var data="hlo"
+    if data.length >= 4
+        p four character word
+    else  
+        p three character word
+
+    ul
+        each val, index in {f1:"apple",f2:"banana"}
+            li= index + ":" + val
+
+    - var i=10
+
+    ul 
+        while i <= 15
+            li= i++
+    
+
+   

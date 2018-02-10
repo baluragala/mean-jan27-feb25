@@ -1,0 +1,14 @@
+extends ../layout
+
+block main  
+    form(method="post")
+        label(for="title") Title:
+        input(name="title")
+
+        label(for="price") Price:
+        input(name="price")
+
+        label(for="stock") Stock:
+        input(name="stock")
+
+        input(type="submit",value="Add Product") 

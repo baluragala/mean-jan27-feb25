@@ -1,0 +1,15 @@
+extends ../layout
+
+block main
+    table(style="width:80%;margin:0 auto;border:1px solid purple")
+        tr
+            td ID
+            td TITLE
+            td PRICE
+            td STOCK
+        each product in products
+            tr(style="border:1px solid green")
+                td= product.id
+                td= product.title
+                td= product.price
+                td= product.stock

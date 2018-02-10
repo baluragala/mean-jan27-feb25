@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title hello jade
+  body
+    div
+      h1= title
+      a(href="http://www.expressjs.com",
+      class="navlink",
+      id="exp",
+      title= title) click here
+    - var authorized = true
+    #main
+      if authorized
+        p.intro this is an introduction for express
+              | this is second line
+      else 
+        p.second this is from else
+
+    - var products = ["apple","banana","orange"]
+
+    ol
+      each val, index in products
+        li= val
+        
