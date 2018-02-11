@@ -14,3 +14,8 @@ CRUD -
 
 insert 
 insertMany
+
+
+cd retail-cms
+npm install  
+nodemon app.js
