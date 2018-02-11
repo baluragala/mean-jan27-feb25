@@ -1,0 +1,16 @@
+String
+Integer
+Boolean
+Double
+Arrays
+Timestamp
+Object
+null
+Date
+ObjectID
+
+
+CRUD - 
+
+insert 
+insertMany
