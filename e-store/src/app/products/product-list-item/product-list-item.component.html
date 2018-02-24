@@ -1,7 +1,7 @@
-<div>
-  <h2>{{item?.name}}</h2>
-  <h3>{{item?.price}}</h3>
-  <h5 *ngIf="item.stock > 0 else nostock">{{item?.stock}}</h5>
+<div [ngStyle]="productStyle">
+  <h2>{{item?.name | lowercase }}</h2>
+  <h3>{{item?.price | currency:'USD' }}</h3>
+  <h5 [ngClass]="{'stock':item.stock > 0, 'nostock':item.stock==0 }">{{item?.stock}}</h5>
   <button (click)="onAddToCart($event,item)">Add To Cart</button>
 
   <ng-template #nostock>

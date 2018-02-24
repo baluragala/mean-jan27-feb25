@@ -1,0 +1,9 @@
+.stock {
+  color: green;
+  font-size: 2em;
+}
+
+.nostock {
+  color: red;
+  font-size: 2em;
+}

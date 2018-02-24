@@ -6,6 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
   styleUrls: ["./product-list-item.component.css"]
 })
 export class ProductListItemComponent implements OnInit {
+  productStyle = { border: "1px solid purple", margin: "2px", padding: "10px" };
   @Input() item;
   @Output() addToCartEvent: EventEmitter<any> = new EventEmitter();
   constructor() {}

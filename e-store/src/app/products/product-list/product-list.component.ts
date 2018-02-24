@@ -8,10 +8,10 @@ import { Component, OnInit } from "@angular/core";
 export class ProductListComponent implements OnInit {
   constructor() {}
 
-  p1 = { name: "prod1", price: 100, stock: 250 };
-  p2 = { name: "prod2", price: 100, stock: 0 };
-  p3 = { name: "prod3", price: 100, stock: 250 };
-  p4 = { name: "prod4", price: 100, stock: 250 };
+  p1 = { name: "prod1", price: 189, stock: 250 };
+  p2 = { name: "prod2", price: 220, stock: 0 };
+  p3 = { name: "prod3", price: 165, stock: 250 };
+  p4 = { name: "prod4", price: 227, stock: 250 };
 
   products = [this.p1, this.p2, this.p3, this.p4];
 
