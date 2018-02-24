@@ -1,6 +1,3 @@
 <h2>Top Selling Products</h2>
 <h2>Products in cart : {{cart.length}}</h2>
-<est-product-list-item [item]="p1" (addToCartEvent)="handleAddToCart($event)"></est-product-list-item>
-<est-product-list-item [item]="" (addToCartEvent)="handleAddToCart($event)"></est-product-list-item>
-<est-product-list-item [item]="p3" (addToCartEvent)="handleAddToCart($event)"></est-product-list-item>
-<est-product-list-item [item]="p4" (addToCartEvent)="handleAddToCart($event)"></est-product-list-item>
+<est-product-list-item *ngFor="let p of products;let i=index;let e=even;let o=odd;let f=first;let l=last" [item]="p" (addToCartEvent)="handleAddToCart($event)"></est-product-list-item>
