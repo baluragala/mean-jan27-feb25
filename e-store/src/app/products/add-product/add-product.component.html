@@ -1,0 +1,48 @@
+<div>
+  <fieldset>
+    <legend>Add Product</legend>
+    <form #addProductForm="ngForm" (submit)="doSubmit(addProductForm)">
+      <div>
+        <label>Title:</label>
+        <input type="text" name="title" [(ngModel)]="title" required minlength="4" maxlength="20" #t="ngModel" />
+        <table border="1">
+          <tr>
+            <td>valid</td>
+            <td>invalid</td>
+            <td>dirty</td>
+            <td>pristine</td>
+            <td>touched</td>
+            <td>untouched</td>
+          </tr>
+          <tr>
+            <td>{{t?.valid}}</td>
+            <td>{{t?.invalid}}</td>
+            <td>{{t?.dirty}}</td>
+            <td>{{t?.pristine}}</td>
+            <td>{{t?.touched}}</td>
+            <td>{{t?.untouched}}</td>
+          </tr>
+        </table>
+        {{t?.errors|json}}
+        <p class="error" *ngIf="t?.dirty && t?.errors?.required">
+          Name is required
+        </p>
+        <p class="error" *ngIf="t?.dirty && t?.touched && t?.errors?.minlength">
+          Name must be minimum 4 characters
+        </p>
+        <p class="error" *ngIf="t?.dirty && t?.touched && t?.errors?.maxlength">
+          Name must be maximum of 20 characters
+        </p>
+      </div>
+      <div>
+        <label>Price:</label>
+        <input type="number" name="price" [(ngModel)]="price" />
+      </div>
+      <div>
+        <label>Stock:</label>
+        <input type="number" name="stock" [(ngModel)]="stock" />
+      </div>
+      <input type="submit" value="Add Product" />
+    </form>
+  </fieldset>
+</div>
