@@ -13,6 +13,7 @@ import { RouterModule } from "@angular/router";
 import { ProductDetailComponent } from "./product-detail/product-detail.component";
 import { AuthGuard } from "./auth.guard";
 import { UnfinishedGuard } from "./unfinished.guard";
+import { ProductHomeComponent } from "./product-home/product-home.component";
 @NgModule({
   imports: [
     CommonModule,
@@ -22,16 +23,18 @@ import { UnfinishedGuard } from "./unfinished.guard";
     RouterModule.forChild([
       {
         path: "products",
-        component: ProductListComponent,
-        canActivate: [AuthGuard]
-      },
-      {
-        path: "products/add",
-        component: AddProductReactiveComponent,
-        canDeactivate: [UnfinishedGuard]
-      },
-      { path: "products/edit", component: EditProductComponent },
-      { path: "products/detail/:pname", component: ProductDetailComponent }
+        component: ProductHomeComponent,
+        children: [
+          { path: "list", component: ProductListComponent },
+          {
+            path: "add",
+            component: AddProductReactiveComponent,
+            canDeactivate: [UnfinishedGuard]
+          },
+          { path: "edit", component: EditProductComponent },
+          { path: "detail/:pname", component: ProductDetailComponent }
+        ]
+      }
     ])
   ],
   declarations: [
@@ -40,7 +43,8 @@ import { UnfinishedGuard } from "./unfinished.guard";
     AddProductComponent,
     AddProductReactiveComponent,
     EditProductComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    ProductHomeComponent
   ],
   exports: [
     ProductListComponent,
