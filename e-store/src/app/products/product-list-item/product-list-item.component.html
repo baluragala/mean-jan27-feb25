@@ -1,5 +1,7 @@
 <div [ngStyle]="productStyle">
-  <h2>{{item?.name | lowercase }}</h2>
+  <h2>
+    <a [routerLink]="['/products','detail',item.name]">{{item?.name | lowercase }}</a>
+  </h2>
   <h3>{{item?.price | currency:'USD' }}</h3>
   <h5 [ngClass]="{'stock':item.stock > 0, 'nostock':item.stock==0 }">{{item?.stock}}</h5>
   <button (click)="onAddToCart($event,item)">Add To Cart</button>

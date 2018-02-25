@@ -10,6 +10,7 @@ import { EditProductComponent } from "./edit-product/edit-product.component";
 import { ProductService } from "./product.service";
 import { ProductV2Service } from "./product-v2.service";
 import { RouterModule } from "@angular/router";
+import { ProductDetailComponent } from "./product-detail/product-detail.component";
 @NgModule({
   imports: [
     CommonModule,
@@ -22,7 +23,8 @@ import { RouterModule } from "@angular/router";
         path: "products/add",
         component: AddProductReactiveComponent
       },
-      { path: "products/edit", component: EditProductComponent }
+      { path: "products/edit", component: EditProductComponent },
+      { path: "products/detail/:pname", component: ProductDetailComponent }
     ])
   ],
   declarations: [
@@ -30,7 +32,8 @@ import { RouterModule } from "@angular/router";
     ProductListItemComponent,
     AddProductComponent,
     AddProductReactiveComponent,
-    EditProductComponent
+    EditProductComponent,
+    ProductDetailComponent
   ],
   exports: [
     ProductListComponent,

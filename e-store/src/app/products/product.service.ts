@@ -14,4 +14,8 @@ export class ProductService {
   getProducts() {
     return this.products;
   }
+
+  getProduct(name: string) {
+    return this.products.find(p => p.name == name);
+  }
 }
