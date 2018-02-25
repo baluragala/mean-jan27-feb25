@@ -8,20 +8,30 @@ import { RouterModule } from "@angular/router";
 import { ProductListComponent } from "./products/product-list/product-list.component";
 import { AddProductReactiveComponent } from "./products/add-product-reactive/add-product-reactive.component";
 import { EditProductComponent } from "./products/edit-product/edit-product.component";
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { HomeComponent } from "./home/home.component";
+import { ContactComponent } from "./contact/contact.component";
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    PageNotFoundComponent,
+    HomeComponent,
+    ContactComponent
+  ],
   imports: [
     BrowserModule,
     SharedModule,
     ProductsModule,
     RouterModule.forRoot([
-      { path: "products", component: ProductListComponent },
+      { path: "home", component: HomeComponent },
+      { path: "contact", component: ContactComponent },
+      { path: "", redirectTo: "products", pathMatch: "full" },
+
       {
-        path: "products/add",
-        component: AddProductReactiveComponent
-      },
-      { path: "products/edit", component: EditProductComponent }
+        path: "**",
+        component: PageNotFoundComponent
+      }
     ])
   ],
   providers: [],

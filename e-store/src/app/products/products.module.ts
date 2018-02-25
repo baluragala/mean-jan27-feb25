@@ -9,8 +9,22 @@ import { AddProductReactiveComponent } from "./add-product-reactive/add-product-
 import { EditProductComponent } from "./edit-product/edit-product.component";
 import { ProductService } from "./product.service";
 import { ProductV2Service } from "./product-v2.service";
+import { RouterModule } from "@angular/router";
 @NgModule({
-  imports: [CommonModule, SharedModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forChild([
+      { path: "products", component: ProductListComponent },
+      {
+        path: "products/add",
+        component: AddProductReactiveComponent
+      },
+      { path: "products/edit", component: EditProductComponent }
+    ])
+  ],
   declarations: [
     ProductListComponent,
     ProductListItemComponent,
