@@ -31,7 +31,7 @@ import { ProductV2Service } from "./product-v2.service";
     {
       provide: "PS",
       useFactory: function() {
-        return { getProducts: () => [] };
+        return new ProductService();
       }
     }
   ]

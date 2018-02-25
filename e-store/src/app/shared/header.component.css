@@ -6,3 +6,9 @@
   color: red;
   text-align: center;
 }
+
+.active {
+  color: firebrick;
+  font-size: 1.2em;
+  background: lightblue;
+}
