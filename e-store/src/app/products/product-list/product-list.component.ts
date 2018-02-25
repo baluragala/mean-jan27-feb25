@@ -1,4 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Inject } from "@angular/core";
+import { ProductService } from "../product.service";
+import { ProductV2Service } from "../product-v2.service";
 
 @Component({
   selector: "est-product-list",
@@ -6,17 +8,20 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./product-list.component.css"]
 })
 export class ProductListComponent implements OnInit {
-  constructor() {}
+  constructor(
+    @Inject("PS") private productService: ProductService,
+    @Inject("AU") apiKey: string
+  ) {
+    console.log(productService);
+    console.log(apiKey);
+  }
 
-  p1 = { name: "prod1", price: 189, stock: 250 };
-  p2 = { name: "prod2", price: 220, stock: 0 };
-  p3 = { name: "prod3", price: 165, stock: 250 };
-  p4 = { name: "prod4", price: 227, stock: 250 };
-
-  products = [this.p1, this.p2, this.p3, this.p4];
+  products;
 
   cart = [];
-  ngOnInit() {}
+  ngOnInit() {
+    this.products = this.productService.getProducts();
+  }
 
   getName() {
     return "Product List";

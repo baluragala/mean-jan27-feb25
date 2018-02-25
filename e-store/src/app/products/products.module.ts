@@ -7,6 +7,8 @@ import { AddProductComponent } from "./add-product/add-product.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AddProductReactiveComponent } from "./add-product-reactive/add-product-reactive.component";
 import { EditProductComponent } from "./edit-product/edit-product.component";
+import { ProductService } from "./product.service";
+import { ProductV2Service } from "./product-v2.service";
 @NgModule({
   imports: [CommonModule, SharedModule, FormsModule, ReactiveFormsModule],
   declarations: [
@@ -21,6 +23,17 @@ import { EditProductComponent } from "./edit-product/edit-product.component";
     AddProductComponent,
     AddProductReactiveComponent,
     EditProductComponent
+  ],
+  providers: [
+    { provide: ProductService, useClass: ProductV2Service },
+    { provide: "AK", useValue: "ed@#$%f%$%h(*G" },
+    { provide: "AU", useValue: "http://localhost:4000/api" },
+    {
+      provide: "PS",
+      useFactory: function() {
+        return { getProducts: () => [] };
+      }
+    }
   ]
 })
 export class ProductsModule {}
