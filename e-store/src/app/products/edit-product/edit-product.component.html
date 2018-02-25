@@ -1,0 +1,29 @@
+<div>
+  <fieldset>
+    <legend>Edit Product - Reactive</legend>
+    <form [formGroup]="editProductForm" (submit)="doSubmit()">
+      <div>
+        <label>Title:</label>
+        <input type="text" formControlName="title" />
+        <p class="error" *ngIf="editProductForm.controls.title?.dirty && editProductForm.controls.title?.errors?.required">
+          Name is required
+        </p>
+        <p class="error" *ngIf="editProductForm.controls.title?.dirty && editProductForm.controls.title?.touched && addProductForm.controls.title?.errors?.minlength">
+          Name must be minimum 4 characters
+        </p>
+        <p class="error" *ngIf="editProductForm.controls.title?.dirty && editProductForm.controls.title?.touched && addProductForm.controls.title?.errors?.maxlength">
+          Name must be maximum of 20 characters
+        </p>
+      </div>
+      <div>
+        <label>Price:</label>
+        <input type="number" formControlName="price" />
+      </div>
+      <div>
+        <label>Stock:</label>
+        <input type="number" formControlName="stock" />
+      </div>
+      <input type="submit" value="Edit Product" />
+    </form>
+  </fieldset>
+</div>
