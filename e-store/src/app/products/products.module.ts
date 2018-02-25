@@ -11,6 +11,8 @@ import { ProductService } from "./product.service";
 import { ProductV2Service } from "./product-v2.service";
 import { RouterModule } from "@angular/router";
 import { ProductDetailComponent } from "./product-detail/product-detail.component";
+import { AuthGuard } from "./auth.guard";
+import { UnfinishedGuard } from "./unfinished.guard";
 @NgModule({
   imports: [
     CommonModule,
@@ -18,10 +20,15 @@ import { ProductDetailComponent } from "./product-detail/product-detail.componen
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild([
-      { path: "products", component: ProductListComponent },
+      {
+        path: "products",
+        component: ProductListComponent,
+        canActivate: [AuthGuard]
+      },
       {
         path: "products/add",
-        component: AddProductReactiveComponent
+        component: AddProductReactiveComponent,
+        canDeactivate: [UnfinishedGuard]
       },
       { path: "products/edit", component: EditProductComponent },
       { path: "products/detail/:pname", component: ProductDetailComponent }
@@ -50,7 +57,9 @@ import { ProductDetailComponent } from "./product-detail/product-detail.componen
       useFactory: function() {
         return new ProductService();
       }
-    }
+    },
+    AuthGuard,
+    UnfinishedGuard
   ]
 })
 export class ProductsModule {}
