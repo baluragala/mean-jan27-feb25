@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { ProductService } from "../product.service";
+import { ProductService, IProduct } from "../product.service";
 
 @Component({
   selector: "est-product-detail",
@@ -17,6 +17,8 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit() {
     this.name = this.route.snapshot.params["pname"];
     this.qparams = this.route.snapshot.queryParams;
-    this.product = this.service.getProduct(this.name);
+    this.service
+      .getProduct(this.name)
+      .subscribe((product: IProduct) => (this.product = product));
   }
 }

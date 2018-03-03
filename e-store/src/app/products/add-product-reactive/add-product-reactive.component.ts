@@ -5,6 +5,8 @@ import {
   Validators,
   FormBuilder
 } from "@angular/forms";
+import { ProductService, IProduct } from "../product.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "est-add-product-reactive",
@@ -13,7 +15,11 @@ import {
 })
 export class AddProductReactiveComponent implements OnInit {
   addProductForm: FormGroup;
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private productService: ProductService,
+    private router: Router
+  ) {
     // this.addProductForm = new FormGroup({
     //   title: new FormControl("", [
     //     Validators.required,
@@ -24,7 +30,7 @@ export class AddProductReactiveComponent implements OnInit {
     //   stock: new FormControl()
     // });
     this.addProductForm = this.formBuilder.group({
-      title: [
+      name: [
         "",
         [Validators.required, Validators.minLength(4), Validators.maxLength(20)]
       ],
@@ -34,4 +40,12 @@ export class AddProductReactiveComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  doSubmit() {
+    let product: IProduct = this.addProductForm.value;
+    this.productService.addProduct(product).subscribe((p: IProduct) => {
+      alert("product added successfully");
+      this.router.navigate(["/products/list"]);
+    });
+  }
 }

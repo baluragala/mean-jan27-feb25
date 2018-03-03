@@ -21,10 +21,16 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<Array<IProduct>> {
-    return this.http.get<Array<IProduct>>("https://localhost:3000/products");
+    return this.http.get<Array<IProduct>>("http://localhost:3000/products1");
   }
 
-  getProduct(name: string) {
-    //return this.products.find(p => p.name == name);
+  getProduct(name: string): Observable<IProduct> {
+    return this.http.get<IProduct>(`http://localhost:3000/products`, {
+      params: { name }
+    });
+  }
+
+  addProduct(product: IProduct): Observable<IProduct> {
+    return this.http.post<IProduct>("http://localhost:3000/products", product);
   }
 }

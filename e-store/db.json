@@ -17,11 +17,60 @@
     "name": "typicode"
   },
   "products": [
-    { "id": 1, "name": "prod1", "price": 189, "stock": 250 },
-    { "id": 2, "name": "prod2", "price": 179, "stock": 250 },
-    { "id": 3, "name": "prod3", "price": 169, "stock": 250 },
-    { "id": 4, "name": "prod4", "price": 109, "stock": 250 },
-    { "id": 5, "name": "prod5", "price": 129, "stock": 250 }
+    {
+      "id": 1,
+      "name": "prod1",
+      "price": 189,
+      "stock": 250
+    },
+    {
+      "id": 2,
+      "name": "prod2",
+      "price": 179,
+      "stock": 250
+    },
+    {
+      "id": 3,
+      "name": "prod3",
+      "price": 169,
+      "stock": 250
+    },
+    {
+      "id": 4,
+      "name": "prod4",
+      "price": 109,
+      "stock": 250
+    },
+    {
+      "id": 5,
+      "name": "prod5",
+      "price": 129,
+      "stock": 250
+    },
+    {
+      "name": "iphone",
+      "price": 122,
+      "stock": 11,
+      "id": 6
+    },
+    {
+      "name": "pixel",
+      "price": 1234,
+      "stock": 111,
+      "id": 7
+    },
+    {
+      "name": "note",
+      "price": 2500,
+      "stock": 120,
+      "id": 8
+    },
+    {
+      "name": "sdfgdfgsfg",
+      "price": 2332,
+      "stock": 232,
+      "id": 9
+    }
   ],
   "users": []
 }

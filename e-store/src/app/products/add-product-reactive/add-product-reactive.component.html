@@ -3,8 +3,8 @@
     <legend>Add Product - Reactive</legend>
     <form [formGroup]="addProductForm" (submit)="doSubmit()">
       <div>
-        <label>Title:</label>
-        <input type="text" formControlName="title" />
+        <label>name:</label>
+        <input type="text" formControlName="name" />
         <table border="1">
           <tr>
             <td>valid</td>
@@ -15,22 +15,22 @@
             <td>untouched</td>
           </tr>
           <tr>
-            <td>{{addProductForm.controls.title?.valid}}</td>
-            <td>{{addProductForm.controls.title?.invalid}}</td>
-            <td>{{addProductForm.controls.title?.dirty}}</td>
-            <td>{{addProductForm.controls.title?.pristine}}</td>
-            <td>{{addProductForm.controls.title?.touched}}</td>
-            <td>{{addProductForm.controls.title?.untouched}}</td>
+            <td>{{addProductForm.controls.name?.valid}}</td>
+            <td>{{addProductForm.controls.name?.invalid}}</td>
+            <td>{{addProductForm.controls.name?.dirty}}</td>
+            <td>{{addProductForm.controls.name?.pristine}}</td>
+            <td>{{addProductForm.controls.name?.touched}}</td>
+            <td>{{addProductForm.controls.name?.untouched}}</td>
           </tr>
         </table>
-        {{addProductForm.controls.title?.errors|json}}
-        <p class="error" *ngIf="addProductForm.controls.title?.dirty && addProductForm.controls.title?.errors?.required">
+        {{addProductForm.controls.name?.errors|json}}
+        <p class="error" *ngIf="addProductForm.controls.name?.dirty && addProductForm.controls.name?.errors?.required">
           Name is required
         </p>
-        <p class="error" *ngIf="addProductForm.controls.title?.dirty && addProductForm.controls.title?.touched && addProductForm.controls.title?.errors?.minlength">
+        <p class="error" *ngIf="addProductForm.controls.name?.dirty && addProductForm.controls.name?.touched && addProductForm.controls.name?.errors?.minlength">
           Name must be minimum 4 characters
         </p>
-        <p class="error" *ngIf="addProductForm.controls.title?.dirty && addProductForm.controls.title?.touched && addProductForm.controls.title?.errors?.maxlength">
+        <p class="error" *ngIf="addProductForm.controls.name?.dirty && addProductForm.controls.name?.touched && addProductForm.controls.name?.errors?.maxlength">
           Name must be maximum of 20 characters
         </p>
       </div>

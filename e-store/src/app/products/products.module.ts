@@ -14,7 +14,8 @@ import { ProductDetailComponent } from "./product-detail/product-detail.componen
 import { AuthGuard } from "./auth.guard";
 import { UnfinishedGuard } from "./unfinished.guard";
 import { ProductHomeComponent } from "./product-home/product-home.component";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { AuthInterceptor } from "./auth.intercerptor";
 @NgModule({
   imports: [
     HttpClientModule,
@@ -65,7 +66,8 @@ import { HttpClientModule } from "@angular/common/http";
     //   }
     // },
     AuthGuard,
-    UnfinishedGuard
+    UnfinishedGuard,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ]
 })
 export class ProductsModule {}

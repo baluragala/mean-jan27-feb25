@@ -1,0 +1,7 @@
+1. yarn add json-server --dev
+2. add scripts fakeapi: json-server.......
+3. add products to db.json
+4. add httpclient module
+5. add httpclien dep to products service
+6. update your get products code
+7. update product list

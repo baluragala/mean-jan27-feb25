@@ -30,10 +30,7 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
     this.productService
       .getProducts()
-      .subscribe(
-        (products: Array<IProduct>) => (this.products = products),
-        err => alert("something went wrong")
-      );
+      .subscribe((products: Array<IProduct>) => (this.products = products));
   }
 
   getName() {
