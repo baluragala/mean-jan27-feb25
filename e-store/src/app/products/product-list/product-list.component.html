@@ -1,3 +1,4 @@
 <h2>Top Selling Products</h2>
 <h2>Products in cart : {{cart.length}}</h2>
+<h3 *ngIf="products.length==0">Loading...</h3>
 <est-product-list-item *ngFor="let p of products;let i=index;let e=even;let o=odd;let f=first;let l=last" [item]="p" (addToCartEvent)="handleAddToCart($event)"></est-product-list-item>

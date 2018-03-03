@@ -14,8 +14,10 @@ import { ProductDetailComponent } from "./product-detail/product-detail.componen
 import { AuthGuard } from "./auth.guard";
 import { UnfinishedGuard } from "./unfinished.guard";
 import { ProductHomeComponent } from "./product-home/product-home.component";
+import { HttpClientModule } from "@angular/common/http";
 @NgModule({
   imports: [
+    HttpClientModule,
     CommonModule,
     SharedModule,
     FormsModule,
@@ -56,12 +58,12 @@ import { ProductHomeComponent } from "./product-home/product-home.component";
     { provide: ProductService, useClass: ProductV2Service },
     { provide: "AK", useValue: "ed@#$%f%$%h(*G" },
     { provide: "AU", useValue: "http://localhost:4000/api" },
-    {
-      provide: "PS",
-      useFactory: function() {
-        return new ProductService();
-      }
-    },
+    // {
+    //   provide: "PS",
+    //   useFactory: function() {
+    //     return new ProductService();
+    //   }
+    // },
     AuthGuard,
     UnfinishedGuard
   ]

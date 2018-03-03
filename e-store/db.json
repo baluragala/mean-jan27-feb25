@@ -1,0 +1,27 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "products": [
+    { "id": 1, "name": "prod1", "price": 189, "stock": 250 },
+    { "id": 2, "name": "prod2", "price": 179, "stock": 250 },
+    { "id": 3, "name": "prod3", "price": 169, "stock": 250 },
+    { "id": 4, "name": "prod4", "price": 109, "stock": 250 },
+    { "id": 5, "name": "prod5", "price": 129, "stock": 250 }
+  ],
+  "users": []
+}
